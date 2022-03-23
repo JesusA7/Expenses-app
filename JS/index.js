@@ -7,10 +7,27 @@ const fechaHoy = new Date(Date.now());
 const btnVerTabla = document.querySelector("a .btn-1");
 btnVerTabla.addEventListener("click", () => {
   for (let i = 0; i < botonEliminar.length; i++) {
-    botonEliminar[i].addEventListener("click", (e) => {
-      const registro = e.currentTarget.parentElement.parentElement;
-      registro.parentElement.removeChild(registro);
-    }, false);
+    botonEliminar[i].addEventListener(
+      "click",
+      (e) => {
+        const registro = e.currentTarget.parentElement.parentElement;
+        
+        Swal.fire({
+          title: "Eliminar Registro",
+          text: "¿Estás seguro en eliminar este registro?",
+          icon: "question",
+          showDenyButton: true,
+          // showCancelButton: true,
+          confirmButtonText: "Sí",
+          denyButtonText: `No`,
+        }).then((result)=>{
+          if(result.isConfirmed){
+            registro.parentElement.removeChild(registro);
+          }
+        });
+      },
+      false
+    );
   }
 });
 importe.addEventListener("blur", (e) => {
@@ -45,8 +62,8 @@ agregar.addEventListener("click", () => {
       "<button class='btn__edit' onclick='EditarRegistro()'>" +
       "<ion-icon name='pencil-outline'></ion-icon>" +
       "</button>" +
-      "</td>"+
-      "<td>"+
+      "</td>" +
+      "<td>" +
       "<button class='btn__delete' onclick='EliminarRegistro()'>" +
       "<ion-icon name='trash-outline'></ion-icon>" +
       "</button>" +
@@ -60,10 +77,10 @@ agregar.addEventListener("click", () => {
       title: "Bien Hecho!",
       text: "Se ha registrado su nuevo gasto!",
       icon: "success",
-      showConfirmButton:false,
+      showConfirmButton: false,
       timer: 2500,
-      position:"top",
-      toast:true,
+      position: "top",
+      toast: true,
     });
   }
 });
@@ -109,7 +126,7 @@ function Validar() {
 }
 const descargar = document.getElementById("descargar");
 descargar.addEventListener("click", () => {
-        var table2excel = new Table2Excel();
-        table2excel.export(document.querySelectorAll("#cron_table"));
-      });
+  var table2excel = new Table2Excel();
+  table2excel.export(document.querySelectorAll("#cron_table"));
+});
 function EliminarRegistro() {}

@@ -16,8 +16,9 @@ body {
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
+  --text-color2:#707070;
   /* ====== Transition ====== */
-  --tran-00: all 700ms;
+  --tran-00: all 500ms;
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
   --tran-04: all 0.3s ease;
@@ -81,7 +82,7 @@ h3{
   border-radius: var(--radius);
   font-family: inherit;
   font-size: inherit;
-  color: var(--text-color);
+  color: var(--text-color2);
   outline: none;
   padding: 1rem;
   background: none;
@@ -202,20 +203,17 @@ h3{
 /* =====================TABLA DE DATOS======================== */
 .scroll {
   overflow-x: auto;
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 .container-table {
-  font-family: Mukta, sans-serif;
-  /* height: 100vh; */
-  /* display: grid; */
+  /* font-family: Mukta, sans-serif; */
+  height: 65vh;
   justify-content: center;
   align-items: center;
   color: var(--clr-gray500);
   font-size: 0.9rem;
   background-color: var(--clr-gray100);
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .container-table table {

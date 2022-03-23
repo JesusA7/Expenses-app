@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicación Gastos Personales</title>
+    <link rel="stylesheet" href="/index.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/table2excel.js"></script>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="page__app">
+        <h1>GASTOS</h1>
+        <div class="container__form__input">
+          <label for="Fecha" class="form__label">Fecha:</label>
+          <input
+            type="date"
+            class="form__input"
+            name=""
+            id="Fecha"
+            autocomplete="off"
+          />
+          <br /><br />
+          <label for="Categoria" class="form__label">Categoría:</label>
+          <!-- <input list="categoria" class="form__input">
+          <datalist id="categoria">
+            <option value="Administrativo"></option>
+            <option value="Operativo"></option>
+            <option value=""></option>
+            <option value=""></option>
+          </datalist> -->
+          <select name="Categoria" id="Categoria" class="form__input">
+            <option value="" selected disabled>Elige la Categoria</option>
+            <option value="Alimento">Alimento</option>
+            <option value="Aseo">Aseo Personal</option>
+            <option value="Limpieza">Limpieza</option>
+            <option value="Salud">Salud</option>
+            <option value="Servicio">Servicio</option>
+            <option value="Recreativo">Recreativo</option>
+            <option value="Ropa">Ropa</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Otros Gastos">Otros Gastos</option>
+          </select>
+          <br /><br />
+          <label for="ImporteGasto" class="form__label">Importe:</label>
+          <input
+            type="text"
+            id="ImporteGasto"
+            class="form__input"
+            autocomplete="off"
+            placeholder="Importe del Gasto"
+          />
+          <br /><br />
+          <label for="Comentario" class="form__label">Comentario:</label>
+          <textarea
+            name=""
+            id="Comentario"
+            class="form__input"
+            cols="30"
+            rows="4"
+          ></textarea>
+          <br /><br />
+          <div class="container-button">
+            <button id="Agregar" type="button" class="btn-1">Agregar</button>
+          </div>
+          <br />
+          <div class="container-button">
+            <a href="#modal">
+              <button type="button" class="btn-1">Ver Tabla</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-all" id="modal">
+      <div class="popup">
+        <div class="container-text">
+          <h3>Tabla de Gastos</h3>
+          <div id="cron" class="scroll">
+            <div class="container-table" id="cron_pago">
+              <table id="cron_table" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Importe</th>
+                    <th scope="col">Comentario</th>
+                  </tr>
+                </thead>
+                <tbody id="cuerpoDato"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="container-button">
+            <button type="button" class="btn-1" id="descargar">
+              Export to Excel
+            </button>
+          </div>
+        </div>
+        <a href="#" class="btn-close-popup">X</a>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

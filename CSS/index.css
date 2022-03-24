@@ -179,7 +179,6 @@ h3{
 }
 
 .container-text p {
-  margin-top: 20px;
   font-size: 16px;
 }
 
@@ -205,6 +204,16 @@ h3{
   overflow-x: auto;
   overflow-y: auto;
 }
+.comentario{
+  width: 100px;
+  margin-top: 0px;
+  text-align: left;
+  /* border: 1px solid; */
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .container-table {
   /* font-family: Mukta, sans-serif; */
   height: 65vh;
@@ -230,7 +239,7 @@ h3{
   padding: 0.5rem 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
 }
 .container-table td {

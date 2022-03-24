@@ -56,7 +56,9 @@ agregar.addEventListener("click", () => {
       importeGastado.value +
       "</td>" +
       "<td>" +
+      "<p class='comentario'>"+
       comentario.value +
+      "</p>"+
       "</td>" +
       "<td>" +
       "<button class='btn__edit' onclick='EditarRegistro()'>" +
